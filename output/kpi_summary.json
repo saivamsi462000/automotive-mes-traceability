@@ -1,0 +1,119 @@
+{
+  "units_started": 600,
+  "outcomes": {
+    "PACKED_AFTER_REWORK": 6,
+    "SCRAP": 8,
+    "PACKED": 586
+  },
+  "first_pass_yield_by_station": [
+    {
+      "op": "OP10",
+      "units": 601,
+      "first_pass_ok": 601,
+      "fpy": 1.0
+    },
+    {
+      "op": "OP20",
+      "units": 600,
+      "first_pass_ok": 591,
+      "fpy": 0.985
+    },
+    {
+      "op": "OP30",
+      "units": 592,
+      "first_pass_ok": 591,
+      "fpy": 0.9983
+    },
+    {
+      "op": "OP40",
+      "units": 592,
+      "first_pass_ok": 592,
+      "fpy": 1.0
+    },
+    {
+      "op": "OP50",
+      "units": 592,
+      "first_pass_ok": 588,
+      "fpy": 0.9932
+    },
+    {
+      "op": "OP60",
+      "units": 592,
+      "first_pass_ok": 592,
+      "fpy": 1.0
+    }
+  ],
+  "rolled_throughput_yield": 0.9766,
+  "torque_first_hit": [
+    {
+      "op": "OP30",
+      "first_hits": 1186,
+      "first_hit_ok_rate": 0.9916
+    },
+    {
+      "op": "OP40",
+      "first_hits": 1184,
+      "first_hit_ok_rate": 0.9899
+    }
+  ],
+  "nonconformance_pareto": [
+    {
+      "op": "OP20",
+      "ncs": 9,
+      "reworked": 1,
+      "scrapped": 8
+    },
+    {
+      "op": "OP50",
+      "ncs": 4,
+      "reworked": 4,
+      "scrapped": 0
+    },
+    {
+      "op": "OP30",
+      "ncs": 1,
+      "reworked": 1,
+      "scrapped": 0
+    }
+  ],
+  "error_proofing_scan_rejects": [
+    {
+      "op": "OP40",
+      "detail": "expected CAL-4410-S, scanned CAL-4410-P",
+      "occurrences": 4
+    },
+    {
+      "op": "OP40",
+      "detail": "expected CAL-4410-P, scanned CAL-4410-S",
+      "occurrences": 1
+    },
+    {
+      "op": "OP40",
+      "detail": "lot L-CAL-2207 on hold",
+      "occurrences": 1
+    }
+  ],
+  "andon_events": 21,
+  "containment": {
+    "lot": "L-CAL-2207",
+    "affected_units": 148,
+    "racks": [
+      "RACK-0025",
+      "RACK-0026",
+      "RACK-0027",
+      "RACK-0028",
+      "RACK-0029",
+      "RACK-0030",
+      "RACK-0031",
+      "RACK-0032",
+      "RACK-0033",
+      "RACK-0034",
+      "RACK-0035",
+      "RACK-0036",
+      "RACK-0037",
+      "RACK-0038"
+    ],
+    "new_use_blocked": true
+  },
+  "open_nonconformances": 0
+}

@@ -1,0 +1,28 @@
+{
+  "product": "FSM-200",
+  "description": "Front Suspension Module (left-hand), training example",
+  "serial_prefix": "FSM",
+  "variants": {
+    "FSM-200-STD": {"caliper": "CAL-4410-S", "bearing": "HB-7720"},
+    "FSM-200-PERF": {"caliper": "CAL-4410-P", "bearing": "HB-7720"}
+  },
+  "stations": [
+    {"op": "OP10", "name": "Knuckle load & serialize", "type": "serialize",
+     "plc": "Line1_PLC", "description": "Laser-mark DMC serial on knuckle and register unit in MES"},
+    {"op": "OP20", "name": "Hub bearing press", "type": "press",
+     "press_force_kn": {"low": 28.0, "high": 36.0}, "press_depth_mm": {"low": 41.8, "high": 42.2},
+     "scan_component": "bearing"},
+    {"op": "OP30", "name": "Strut clamp bolt torque", "type": "torque",
+     "bolts": 2, "torque_nm": {"low": 95.0, "target": 100.0, "high": 105.0},
+     "angle_deg": {"low": 30.0, "high": 60.0}, "max_retries": 1},
+    {"op": "OP40", "name": "Brake caliper install", "type": "torque",
+     "scan_component": "caliper", "bolts": 2,
+     "torque_nm": {"low": 112.0, "target": 120.0, "high": 128.0},
+     "angle_deg": {"low": 20.0, "high": 50.0}, "max_retries": 1},
+    {"op": "OP50", "name": "End-of-line inspection", "type": "inspection",
+     "checks": ["visual", "caliper_orientation", "dmc_readable"]},
+    {"op": "OP60", "name": "Pack & RFID ship label", "type": "pack",
+     "rack_capacity": 12}
+  ],
+  "rework_station": {"op": "RW01", "name": "Rework bench", "return_to": "failed_op"}
+}
